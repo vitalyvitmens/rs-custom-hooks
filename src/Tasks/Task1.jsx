@@ -1,16 +1,26 @@
-import { Button } from '../components/Button'
+import { useLayoutEffect, useState } from 'react'
 import { useFetch } from '../hooks/useFetch'
+import { Button } from '../components/Button'
 import styles from './tasks.module.css'
 
 export function Task1() {
-	const { data, isLoading, error, refetch } = useFetch(
-		'https://jsonplaceholder.typicode.com/posts'
-	)
+	const [url, setUrl] = useState('https://jsonplaceholder.typicode.com/posts')
+	const { data, isLoading, error, newOptions, refetch } = useFetch(url)
+
+	useLayoutEffect(() => {
+		newOptions &&
+			setUrl(
+				url.concat(`?${new URLSearchParams(newOptions.params).toString()}`)
+			)
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [newOptions])
 
 	return (
 		<div>
+			<h4>Task1</h4>
 			<div>
 				<Button
+					disabled={newOptions}
 					onClick={() =>
 						refetch({
 							params: {
@@ -22,8 +32,8 @@ export function Task1() {
 					Перезапросить
 				</Button>
 			</div>
-			{isLoading && 'Загрузка...'}
-			{error && 'Произошла ошибка'}
+			<div className={styles.loading}>{isLoading && 'Загрузка...'}</div>
+			<div className={styles.err}>{error && 'Произошла ошибка!'}</div>
 			{data &&
 				!isLoading &&
 				data.map((i) => (
