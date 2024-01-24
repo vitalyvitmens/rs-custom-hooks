@@ -12,6 +12,7 @@
 	letter-spacing: 0.05em;
 	border-radius: 0.375rem;
 	box-shadow: -2px 5px 5px black;
+	cursor: pointer;
 }
 
 .btn:hover {
@@ -20,15 +21,14 @@
 
 .btn:active {
 	box-shadow: none;
-	border-width: 1px;
-	border-style: solid;
-	border-color: black;
+	border: 1px solid black;
 }
 
-.btn.disabled {
+.btn:disabled {
 	opacity: 0.5;
-}
-
-.btn.disabled:hover {
-	opacity: 0.5;
+	background-color: #eeeaea;
+	color: gray;
+	cursor: not-allowed;
+	box-shadow: none;
+	border: 1px solid black;
 }
