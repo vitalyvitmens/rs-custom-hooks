@@ -1,7 +1,7 @@
-import { Tasks1 } from './Tasks/Tasks1'
-import { Tasks2 } from './Tasks/Tasks2'
-import { Tasks3 } from './Tasks/Tasks3'
-import { Tasks4 } from './Tasks/Tasks4'
+import { Task1 } from './Tasks/Task1'
+import { Task2 } from './Tasks/Task2'
+import { Task3 } from './Tasks/Task3'
+import { Task4 } from './Tasks/Task4'
 import styles from './app.module.css'
 
 export const App = () => {
@@ -9,10 +9,10 @@ export const App = () => {
 		<div className={styles.app}>
 			<h1>Custom Hooks</h1>
 			<header className={styles.appHeader}>
-				<Tasks1 />
-				<Tasks2 />
-				<Tasks3 />
-				<Tasks4 />
+				<Task1 />
+				<Task2 />
+				<Task3 />
+				<Task4 />
 			</header>
 		</div>
 	)
