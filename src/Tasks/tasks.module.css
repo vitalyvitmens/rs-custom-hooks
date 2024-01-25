@@ -26,3 +26,18 @@ button {
 	color: rgb(2, 112, 2);
 	font-weight: 600;
 }
+
+.hoverable {
+	background-color: aliceblue;
+	padding: 20px;
+	border-radius: 15px;
+	font-size: 1.5rem;
+	font-weight: 500;
+	color: red;
+}
+
+.hoverable:hover {
+	background-color: beige;
+	color: rgb(2, 112, 2);
+	cursor: pointer;
+}
