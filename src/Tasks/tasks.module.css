@@ -19,3 +19,10 @@ button {
 	font-weight: 600;
 	color: red;
 }
+
+.token {
+	display: flex;
+	font-size: 1.5rem;
+	color: rgb(2, 112, 2);
+	font-weight: 600;
+}
